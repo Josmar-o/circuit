@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - Usuarios</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="usuarios.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="/js/agregarIcono.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <i class="fas fa-store"></i>
+            <span>Admin Panel</span>
+        </div>
+        <nav>
+            <a href="./productos.html"><i class="fas fa-box"></i> Productos</a>
+            <a href="./dashboard.html"><i class="fas fa-chart-bar"></i> Dashboard</a>
+            <a href="./usuarios.html" class="active"><i class="fas fa-users"></i> Usuarios</a>
+            
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h1><i class="fas fa-box"></i> Gestión de Productos</h1>
+            <div class="user-info">
+                <div class="user-dropdown">
+                    <div class="user-trigger">
+                        <i class="fas fa-user-circle"></i>
+                        <span>Administrador</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="dropdown-menu">
+                        <a href="../html/index.html"><i class="fas fa-user"></i> Panel Cliente</a>
+                        <a href="#" id="adminLogout"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="content-wrapper">
+            <div class="form-container">
+                <h2>Agregar Nuevo Usuario</h2>
+                <form id="user-form">
+                    <div class="form-group">
+                        <label for="user-name"><i class="fas fa-user"></i> Nombre Completo</label>
+                        <input type="text" id="user-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="user-email"><i class="fas fa-envelope"></i> Email</label>
+                        <input type="email" id="user-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="user-role"><i class="fas fa-user-tag"></i> Rol</label>
+                        <select id="user-role" required>
+                            <option value="admin">Administrador</option>
+                            <option value="editor">Editor</option>
+                            <option value="viewer">Visualizador</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="user-password"><i class="fas fa-lock"></i> Contraseña</label>
+                        <input type="password" id="user-password" required>
+                    </div>
+                    <button type="submit"><i class="fas fa-plus"></i> Agregar Usuario</button>
+                </form>
+            </div>
+
+            <div class="users-container">
+                <h2>Usuarios Registrados</h2>
+                <div class="users-table-container">
+                    <table id="users-table">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Email</th>
+                                <th>Rol</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="users-list">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Agregar esto al final del body antes de los scripts -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Editar Usuario</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <form id="edit-user-form">
+                <div class="form-group">
+                    <label for="edit-user-name"><i class="fas fa-user"></i> Nombre Completo</label>
+                    <input type="text" id="edit-user-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-user-email"><i class="fas fa-envelope"></i> Email</label>
+                    <input type="email" id="edit-user-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-user-role"><i class="fas fa-user-tag"></i> Rol</label>
+                    <select id="edit-user-role" required>
+                        <option value="admin">Administrador</option>
+                        <option value="editor">Editor</option>
+                        <option value="viewer">Visualizador</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="edit-user-password"><i class="fas fa-lock"></i> Nueva Contraseña (opcional)</label>
+                    <input type="password" id="edit-user-password">
+                    <small>Dejar en blanco para mantener la contraseña actual</small>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel"><i class="fas fa-times"></i> Cancelar</button>
+                    <button type="submit" class="btn-save"><i class="fas fa-save"></i> Guardar Cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="usuarios.js"></script>
+</body>
+</html>

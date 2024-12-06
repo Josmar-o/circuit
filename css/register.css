@@ -1,0 +1,279 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.split-screen {
+    display: flex;
+    height: 100vh;
+}
+
+/* Left side */
+.left {
+    flex: 1;
+    background-image: url('https://images.unsplash.com/photo-1588508065123-287b28e013da?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.left .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+    color: white;
+}
+
+.left h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.left p {
+    font-size: 1.2rem;
+    max-width: 80%;
+    line-height: 1.5;
+}
+
+/* Right side */
+.right {
+    flex: 1;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-container {
+    width: 80%;
+    max-width: 400px;
+    padding: 2rem;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #1a1a1a;
+    margin-bottom: 0.2rem;
+}
+
+.input-container {
+    margin-bottom: 0.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+    font-size: 0.9rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 13px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #2563eb;
+    outline: none;
+}
+
+.password-field {
+    position: relative;
+}
+
+#togglePassword,
+#toggleConfirmPassword {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+}
+
+.terms-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.terms-container label {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.register-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.register-btn:hover {
+    background: #1d4ed8;
+}
+
+.social-login {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.social-login p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1.5px solid #e0e0e0;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.social-btn i {
+    font-size: 1.2rem;
+}
+
+.social-btn.facebook i {
+    color: #1877f2;
+}
+
+.social-btn.apple i {
+    color: #000;
+}
+
+.login-text {
+    text-align: center;
+    margin-top: 1rem;
+    color: #666;
+    margin-bottom: 10px ;
+}
+
+.login-text a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Password strength indicator */
+.password-strength {
+    height: 4px;
+    margin-top: 0.5rem;
+    border-radius: 2px;
+    background: #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.password-strength.weak {
+    background: #ef4444;
+    width: 33.33%;
+}
+
+.password-strength.medium {
+    background: #f59e0b;
+    width: 66.66%;
+}
+
+.password-strength.strong {
+    background: #10b981;
+    width: 100%;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .split-screen {
+        flex-direction: column;
+    }
+
+    .left {
+        display: none;
+    }
+
+    .right {
+        padding: 2rem;
+    }
+
+    .register-container {
+        width: 100%;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.register-container {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}

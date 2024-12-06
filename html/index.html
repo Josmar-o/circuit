@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circuit & Componentes</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="/js/agregarIcono.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img class="logo" src="/img/logo.jpg" alt="Circuit">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <div class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+        </div>
+
+<!-- Reemplaza el div user-profile existente con este -->
+<div class="user-profile">
+    <div class="profile-icon" id="profileIcon">
+        <img src="https://via.placeholder.com/32" alt="User Profile" id="userImage">
+    </div>
+    <div class="profile-dropdown" id="profileDropdown">
+        <div class="profile-header">
+            <img src="#" alt="User Profile" id="dropdownUserImage">
+            <div class="profile-info">
+                <span id="userName">No has iniciado sesión</span>
+                <span id="userEmail"></span>
+            </div>
+        </div>
+        <div class="profile-options">
+            <a href="#" class="profile-option" id="themeToggle">
+                <i class="fas fa-moon"></i> Modo Oscuro
+            </a>
+            <div class="divider"></div>
+            <a href="/html/login.html" class="profile-option" id="signInButton">
+                <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+            </a>
+            <a href="#" class="profile-option hidden" id="signOutButton">
+                <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+            </a>
+        </div>
+    </div>
+</div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Circut Soluciones rápidas para tus problemas tecnológicos</h1>
+            <p>Reparación profesional de equipos y venta de componentes</p>
+            <button id="testButton" class="cta-button">Contactar ahora</button>
+        </div>
+    </section>
+
+<!-- Replace the current flyer img tag with -->
+<div class="flyer-container">
+    <img src="/img/Flayers.png" alt="Flayer">
+</div>
+
+
+<!-- Replace the current cuna audio tag with -->
+<div class="cuna-container">
+    <h2>¿Quiénes somos?</h2>
+    <audio class="audio-player" controls>
+        <source src="audio/Cuña_de_John_Cuprill_8_1012_1333_V2.mp3" type="audio/mp3">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+</div>
+
+<!-- Replace the current cuna video tag with -->
+<div class="video-container">
+    <!-- Título opcional -->
+    <div class="video-title">¿Cómo Trabajamos?</div>
+    <!-- Inserción del video -->
+    <iframe src="https://www.youtube.com/embed/pZ2OHMWV26I" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+    <!-- Servicios Section -->
+    <section id="servicios" class="services">
+        <h2>Nuestros Servicios</h2>
+        <div class="services-container">
+            <div class="service-card">
+                <i class="fas fa-laptop"></i>
+                <h3>Reparación de Laptops</h3>
+                <p>Servicio técnico especializado para todo tipo de portátiles</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-desktop"></i>
+                <h3>Reparación de PCs</h3>
+                <p>Mantenimiento y reparación de computadoras de escritorio</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-microchip"></i>
+                <h3>Venta de Componentes</h3>
+                <p>Amplio catálogo de componentes y repuestos</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos Section -->
+    <section id="productos" class="products">
+        <h2>Productos Destacados</h2>
+        <div class="products-container" id="productsContainer">
+            <!-- Products will be loaded dynamically -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact">
+        <h2>Contacto</h2>
+        <div class="contact-container">
+            <form class="contact-form">
+                <input type="text" placeholder="Nombre" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Mensaje" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+            <div class="contact-info">
+                <h3>Información de contacto</h3>
+                <p><i class="fas fa-phone"></i> +507 234 6786</p>
+                <p><i class="fas fa-envelope"></i> info@Circuit.com</p>
+                <p><i class="fas fa-location-dot"></i> Calle Principal #123</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Circuit</h3>
+                <p>Tu solución en tecnología</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces rápidos</h3>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Circuit. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modal del Carrito -->
+<div id="cartModal" class="cart-modal">
+    <div class="cart-modal-content">
+        <div class="cart-header">
+            <h2>Tu Carrito</h2>
+            <span class="close-cart">&times;</span>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Los items del carrito se cargarán aquí dinámicamente -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button id="checkoutButton" class="checkout-button">Proceder al pago</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Pago -->
+<div id="PaymentModal" class="payment-modal">
+    <div class="payment-modal-content">
+        <span class="close-btn" id="closePaymentModal">&times;</span>
+        <h2>Finalizar Compra</h2>
+        <!-- Add this div for total amount -->
+        <div class="payment-total">
+            <h3>Total a Pagar: $<span id="modalPaymentAmount">0.00</span></h3>
+        </div>
+        <form id="payment-form">
+            <div class="form-group">
+                <label for="card-element">Información de Pago</label>
+                <div id="card-element"></div>
+                <div id="payment-message"></div>
+            </div>
+            <button type="submit" id="submit-payment">
+                <span id="button-text">Pagar $<span id="payment-amount"></span></span>
+                <div id="spinner" class="spinner hidden"></div>
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- Modal de Historial de Pagos -->
+<div id="paymentHistoryModal" class="payment-modal">
+    <div class="payment-modal-content">
+        <span class="close-btn" id="closeHistoryModal">&times;</span>
+        <h2>Historial de Pagos</h2>
+        <div id="paymentHistoryContent">
+            <!-- Los pagos se cargarán aquí dinámicamente -->
+        </div>
+    </div>
+</div>
+  
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="/js/script.js" type="module"></script>
+</body>
+</html>
